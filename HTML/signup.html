@@ -1,0 +1,92 @@
+<html>
+<head>
+  <meta charset = "UTF-8" />
+<title>Sign-up</title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://threejs.org/build/three.min.js"></script>
+<script src="https://raw.githack.com/syt123450/giojs/master/build/gio.min.js"></script>
+<script src="https://raw.githack.com/syt123450/giojs/master/assets/data/sampleData.js"></script>
+<link rel="stylesheet" href="..\css\signup.css">
+</head>
+
+<body>
+<div id="globalArea"></div>
+<center>
+<div class="back">
+<pre class="glow"> S I G N - U P </pre>
+</div>
+</center>
+
+<center>
+<form method="post" action="login.html">
+    <div class = "line">
+
+        <label class="pass" for="uname">            Username:</label>
+        <input class="field" id="uname"             name="uname" type="text" required autofill="off"/><br>
+
+        <label class="pass" for="Phone number">     Phone number:</label>
+        <input class="field" type="tel" pattern="[6-9]{1}[0-9]{9}" id="Phonenumber" TITLE="XXXXXXXXXX" name="Phonenumber" required/><br>
+
+        <label class=" pass" for="Email">            Email  id:</label>
+        <input class="field " id="Emailid"         name="Email" type="email" required/> <br>
+
+        <label class=" pass" for="Address ">         Address :</label>
+        <input class="field " id="Address "          name="Address " type="text" required/>  <br>
+
+        <label class=" pass" for="Password">         Password:</label>
+        <input class="password " id="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name="Password" type="password" required/>  <br>
+
+        <label class=" pass" for="Confirm password"> Confirm password:</label>
+        <input class="password" " id="ConfirmpasswordS" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"name="Confirm password" type="password" required/><br>
+
+    </div>
+
+	<div class = "pad">
+    <input class="buttons" type="submit"></input>
+    <br>
+    <a href="login.html" class="button "><span>Login</span></a>
+  </div>
+
+<script type="text/javascript">
+  // Get the container to hold the IO globe
+var container = document.getElementById( "globalArea" );
+// Create Gio.controller
+var controller = new GIO.Controller( container );
+// Add data
+controller.configure({
+
+	control: {
+		stats: false,
+		disableUnmentioned: false,
+		lightenMentioned: false,
+		inOnly: false,
+		outOnly: false,
+		initCountry: "IN",
+		halo: true,
+		transparentBackground: false,
+		autoRotation: true,
+		rotationRatio: 1
+	},
+	color: {
+    surface: 6213137,
+		selected: 9434137,
+		in: 16777215,
+		out: 12575339,
+		halo: 4718351,
+		background: 0
+	},
+	brightness: {
+		ocean: 0.5,
+		mentioned: 0.5,
+		related: 0.5
+	}
+
+});
+controller.addData( data );
+// Initialize and render the globe
+controller.init();
+
+  </script>
+</body>
+
+</html>

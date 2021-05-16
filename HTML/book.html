@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/book.css">
+  </head>
+
+  <body>
+    <div class="book">
+      <input id="dt" type="datetime-local" />
+      </div>
+      <script>
+        var now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        t=now.toISOString().slice(0,16);
+        console.log(t);
+        document.getElementById('dt').min=t;
+        </script>        
+  </body>
+</html>

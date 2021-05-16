@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>PARKWHIZ</title>
+<link rel="stylesheet" href="../css/map.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script  src=" ../js/maps.js"></script>
+<script type="text/javascript" src="../js/cord.geojson"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
+</head>
+
+<body >
+  <div class="navbar">
+      <a href="#home" class="state">Home</a>
+      <a href="#b">Features</a>
+      <a href="#contact">About us</a>
+      <a href="pricing.html">Parking Options</a>
+      <a href="#Payment">Locations</a>
+      <a href="login.html" target="_blank" style="float:right;">Logout</a>
+    </div>
+<div style="position: relative; padding-top:10%">
+  <select name="country" class="countries order-alpha" id="countryId">
+      <option value="">Select Country</option>
+  </select>
+  <select name="state" class="states order-alpha" id="stateId">
+      <option value="">Select State</option>
+  </select>
+  <select name="city" class="cities order-alpha" id="cityId" onchange="addarea()">
+      <option value="">Select City</option>
+  </select>
+  <select name="area" class="areas order-alpha" id="areaId" onchange="navigate()">
+    <option value="">Select Area</option>
+  </select><right>
+
+</div><br>
+
+<div id='mapid' style='width: 100%; height: 93%; position:fixed;'></div>
+<script>
+    var mymap = L.map('mapid',{
+      minZoom:0,
+      maxZoom:20
+    }).setView( [21.945095443371134,78.71294323252256], 5);
+  L.tileLayer('https://api.mapbox.com/styles/v1/dipak1/ckg5ndg8219sz19nrt0bmityf/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZGlwYWsxIiwiYSI6ImNrZzVuOXpxNzB3N3AycHFudGI4aWpoZ2IifQ.-1SLpWox8kZryxZW5ol9cA', {
+    maxNativeZoom: 20, maxZoom: 20, minNativeZoom: 0, minZoom: 0
+  }).addTo(mymap);
+    mymap.attributionControl.addAttribution("<a href=\"https://www.jawg.io\" target=\"_blank\">&copy; Jawg</a> - <a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>&nbsp;contributors")
+</script>
+
+</body>
+</html>
